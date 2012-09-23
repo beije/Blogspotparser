@@ -10,7 +10,7 @@
  * @file		: class.blogspot.parser.php
  * @version		: 1.0.0
  * @created		: 2012-09-22
- * @updated		: 2012-09-22
+ * @updated		: 2012-09-23
  *
  * @usage		:
  *
