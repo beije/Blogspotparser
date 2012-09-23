@@ -1,0 +1,20 @@
+body 
+{
+	font-family:verdana;
+	font-size:12px;
+	margin:0; 
+	padding:0;
+}
+div.wrapper
+{
+	margin:50px auto 0 auto;
+	width:500px;
+}
+fieldset.uploadForm
+{
+	border-radius:5px;
+}
+fieldset.uploadForm legend
+{
+	padding:3px 7px;
+}

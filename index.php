@@ -30,17 +30,19 @@
 <html>
 	<head>
 		<title>Blogspot parser</title>
+		<link rel="stylesheet" href="css/global.css" type="text/css" />
 	</head>
 	<body>
-		<fieldset>
-			<legend>Upload your XML backup file</legend>
-			<form enctype="multipart/form-data" action="index.php" method="POST">
-				<input name="backupfile" type="file" />
-				<input type="hidden" name="parse" value="1" />
-				<input type="submit" name="submit" value="submit" />
-			</form>
-		</fieldset>
-	
+		<div class="wrapper">
+			<fieldset class="uploadForm">
+				<legend>Upload your XML backup file</legend>
+				<form enctype="multipart/form-data" action="index.php" method="POST">
+					<input name="backupfile" type="file" />
+					<br />
+					<input type="submit" name="parse" value="submit" />
+				</form>
+			</fieldset>
+		</div>
 	
 	</body>
 </html>	

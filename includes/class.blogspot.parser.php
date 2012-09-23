@@ -14,10 +14,11 @@
  *
  * @usage		:
  *
- *				$p = new Blogspotparser( $XMLDATASTRING );	// Initiate class
- *				$p->fetch_entries_clean();		// Output posts as clean data
- *				$p->fetch_entries();			// Output posts with original markup
- *				$p->fetch_amount_of_entries();	// Fetch amount of posts in backup
+ * $p = new Blogspotparser( $XMLDATASTRING );	// Initiate class
+ * $p->fetch_entries_clean();					// Output posts as clean data
+ * $p->fetch_entries();							// Output posts with original markup
+ * $p->fetch_amount_of_entries();				// Fetch amount of posts in backup
+ * $p->fetch_image_links();						// Ouputs an array with image links withing the posts
  *
  */
 
@@ -76,6 +77,28 @@ class Blogspotparser {
 		return $arr;
 	}
 	
+	/**
+     * function fetch_image_links()
+     * Searches for and outputs links to images within the messages
+	 *
+     * @return   array
+     *
+     */
+	public function fetch_image_links() {
+		$links = array();
+		$final = array();
+		foreach( $this->posts as $post ) {
+			preg_match_all("/src\=\"(.+?)?\"/", $post['content'], $matches);
+			$links = array_merge( $links, $matches[1] );
+		}
+		foreach( $links as $link ) {
+			if( strpos($link, 'blogspot.com') ) {
+				$final[] = $link;
+			}
+		}
+
+		return $final;
+	}
 	/**
      * function generate_posts()
      * Parses all the posts out of the backup string
